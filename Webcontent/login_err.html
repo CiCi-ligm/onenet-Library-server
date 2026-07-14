@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Login_err</title>
+<script type="application/x-javascript"> 
+	addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+	function hideURLbar(){ window.scrollTo(0,1); 
+	} 
+</script>
+
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,800italic,800,700italic,700,600,600italic' rel='stylesheet' type='text/css'>
+
+<script src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<SCRIPT language=javascript>
+//检验表单的合法性
+function checklogin() {
+	if (document.loginform.username.value.replace(/\s+$|^\s+/g,"").length<=0||document.loginform.username.value=="Your Name") {
+		alert("\请输入您的帐号！");
+		document.loginform.username.focus();
+		return false;
+	}
+	if (document.loginform.password.value.replace(/\s+$|^\s+/g,"").length<=0||document.loginform.password.value=="Password") {
+		alert("\请输入您的密码！");
+		document.loginform.password.focus();
+		return false;
+	} 
+}
+
+function checkUser(){
+	alert("\您的密码输入错误，请核对后重新输入！");
+}
+</SCRIPT>
+</head>
+<body background="images/1.jpg" onload="return checkUser();">
+<div class="header" id="home">
+			<nav class="navbar navbar-default">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="login.html"><h1>BookManagement</h1><br /><span>Reading Online</span></a>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right margin-top cl-effect-2">
+								<li><a href="home.html"><span data-hover="Home">Home</span></a></li>
+								<li><a href="about.html"><span data-hover="About">About</span></a></li>
+								<li><a href="register.html"><span data-hover="Register">Register</span></a></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div><!-- /.navbar-collapse -->
+						
+						<div class="clearfix"></div>
+				</div><!-- /container-fluid -->
+			</nav>
+			<TABLE height=29 cellSpacing=0 cellPadding=0 width=1100 align=center  border=0 >
+ 			 <TR align="right">
+   				 <TD  width=5000>
+			    	<DIV style="PADDING-BOTTOM: 6px; COLOR:#598AAB">
+			    	当前时间为：
+			    	<SPAN id=time></SPAN>
+			    	<SCRIPT>setInterval("time.innerHTML=new Date().getHours()+':'+new Date().getMinutes()+':'+new Date().getSeconds()",1000);</SCRIPT></font>
+			    	</DIV>
+				</TD>
+			  </TR>
+			</TABLE>
+			<br><br>
+			<div class="header-banner">
+					<!-- Top Navigation -->
+					<div class="container page-seperator">
+					<section >
+						<div class="container"> 
+						<div class="banneer-text">
+						<h3>You can either travel or read</h3>
+						<h4>but either your body or soul must be on the way!</h4>
+						<br>
+						<p>Feel the beauty of words and enjoy the joy of writing</p>
+						</div>
+						<div class="banner-forms">
+							<form name="loginform" action="/BookManagement/LoginServlet" method="post" onSubmit="return checklogin();">
+								<input class="name" type="text" name="username" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Your Name';}">
+								<input class="name" type="text" name="password"  onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Password';}">
+								<table>
+									<tr>
+										<td align="center"><input type="radio" name="selectType" value="student" >学生端口</td>
+										<td align="center"><input type="radio" name="selectType" value="teacher">教师端口</td>
+									</tr>
+									<tr><td>&nbsp;</td></tr>
+									<tr>
+										<td align="left"><button type="submit" >登录</button></td>
+										<td align="center"><input type="button" onclick="window.location.href='contact.html'" value="忘记密码"></input></td>
+									</tr>
+								</table>	
+							</form>
+						</div>
+					</section>
+</div>
+</div>
+<br><br><br><br><br><br><br><br><br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+	<tr>
+		<td bgcolor="#f1f1f6" height="53" valign="center" background="images/cutter1.png">
+		<p align="center">Copyright &copy;2017 - 2022 <a href="http://www.briup.com.cn"><b><font face="Verdana,">Cy_BookManagement.com.cn</font></b></b></a><br>
+		</td>
+	</tr>
+</table>
+<script type="text/javascript">
+		$(document).ready(function() {
+				/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+				*/
+		$().UItoTop({ easingType: 'easeOutQuart' });
+});
+</script>
+<a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!----> 
+</body>
+</html>

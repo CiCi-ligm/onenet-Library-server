@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>History</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Stunning Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<LINK href="css/main.css" rel=stylesheet>
+<script language = "JavaScript" src = "js/main.js"></script>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--flexslider-css-->
+<!--bootstrap-->
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<!--coustom css-->
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<!--fonts-->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,800italic,800,700italic,700,600,600italic' rel='stylesheet' type='text/css'>
+<!--/fonts-->
+<!--script-->
+<script src="js/jquery.min.js"> </script>
+	<!-- js -->
+		 <script src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<!--/script-->
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+				});
+			});
+</script>
+<!--/script-->
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<link rel="stylesheet" type="text/css" href="css/style4.css" />
+
+<style type="text/css">
+#left {
+ float: left;
+ height: 400px;
+ width: 225px;
+}
+#right {
+ float: left;
+ height: 400px;
+ width: 1000px;
+}
+</style>
+
+</head>
+<body>
+<div class="header" id="home">
+			<nav class="navbar navbar-default">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#"><h1>BookManagement</h1><br /><span>Reading Online</span></a>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right margin-top cl-effect-2">
+								<li><a href="student_index.html"><span data-hover="Home">Home</span></a></li>
+								<li><a href="order.html"><span data-hover="Order">Order</span></a></li>
+								<li><a href="littleCar.html"><span data-hover="LittleCar">LittleCar</span></a></li>
+								<li><a href="history.html"><span data-hover="History">History</span></a></li>
+								<li><a href="changePassword.html"><span data-hover="ChangePassword">ChangePassword</span></a></li>
+								<li><a href="resetInformation.jsp"><span data-hover="ResetInformation">ResetInformation</span></a></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div><!-- /.navbar-collapse -->
+						
+						<div class="clearfix"></div>
+			</div><!-- /container-fluid -->
+</nav>
+<TABLE height=29 cellSpacing=0 cellPadding=0 width=1100 align=center  border=0 >
+ 			 <TR align="right">
+   				 <TD  width=5000>
+			    	<DIV style="PADDING-BOTTOM: 6px; COLOR:#71C6C1">
+			    	当前时间为：
+			    	<SPAN id=time></SPAN>
+			    	<SCRIPT>setInterval("time.innerHTML=new Date().getHours()+':'+new Date().getMinutes()+':'+new Date().getSeconds()",1000);</SCRIPT></font>
+			    	</DIV>
+				</TD>
+			  </TR>
+			</TABLE>
+<div class="container">
+<div class="about-top heading">
+	<h4>Welcome to Cy_BM for History</h4>
+</div>
+</div>
+<br>
+
+<div id="left">
+	<img alt="" src="images/pp1.png"></img>
+</div>
+<div id="right">
+	<table width="900" cellpadding=3 cellspacing=1 align=center class=tableborder1 border="1px" bordercolor="grey">
+		<tr>
+			<td valign=middle align=center height=35 background="images/bg2.gif" width=""><font color="#ffffff"><b>序号</b></font></td>
+			<td valign=middle align=center height=35 background="images/bg2.gif" width=""><font color="#ffffff"><b>书单状态</b></font></td>
+			<td valign=middle align=center height=35 background="images/bg2.gif" width=""><font color="#ffffff"><b>借书日期</b></font></td>
+			<td valign=middle align=center height=35 background="images/bg2.gif" width=""><font color="#ffffff"><b>书目总量</b></font></td>
+			<td valign=middle align=center height=35 background="images/bg2.gif" width=""><font color="#ffffff"><b>操作</b></font></td>
+		</tr>
+		<tr>
+			<td height=25 bgcolor="#E4F3FF" valign=middle align=center width="">1</td>
+			<td height=25 valign=middle width="" align=center>&nbsp;&nbsp;<a href="productDetail.jsp?productid=4">在借</a></td>
+			<td height=25 bgcolor="#E4F3FF" valign=middle align=center width="">2000年9月</td>
+			<td height=25 valign=middle align=center width="">3</td>
+			<td height=25 bgcolor="#E4F3FF" valign=middle align=center width="">
+			<!-- <input type="button" value="明细" onclick="javascript:window.location='/estore/user/orderinfo.jsp?orderid=${order.id}';"></td> -->
+			<input type="button" value="明细" onclick="javascript:window.location='orderHistoryInfo.html';"></td>
+			
+		</tr>
+	</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>AddBook</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Stunning Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--flexslider-css-->
+<!--bootstrap-->
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<!--coustom css-->
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<!--fonts-->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,800italic,800,700italic,700,600,600italic' rel='stylesheet' type='text/css'>
+<!--/fonts-->
+<!--script-->
+<script src="js/jquery.min.js"> </script>
+	<!-- js -->
+		 <script src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<!--/script-->
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+				});
+			});
+</script>
+<!--/script-->
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<link rel="stylesheet" type="text/css" href="css/style4.css" />
+
+</head>
+
+<body background="images/backgroud3.png">
+<table><tr><td><br></td></tr></table>
+<div class="about-top heading">
+	<h4>&nbsp;&nbsp;&nbsp;&nbsp;The Cy_BM of Taiyuan University of Technology</h4>
+</div>
+
+<form method="post"  action="/BookManagement/AddBookServlet">
+	<table cellpadding="3" cellspacing="1" align="center"  >
+	<tr><td ><br></td></tr>
+	<tr><td ><br></td></tr>
+		<tr>
+			<td width="40%" class="tablebody1" align="center"><b>书&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</b>：</td>
+			<td width="60%" class="tablebody1" >
+			<input type="text" maxLength="26" size="32" name="bookName" style="font-family: Tahoma,Verdana,宋体; font-size: 12px; line-height: 15px; color: #000000"></td>
+		</tr>
+		<tr><td ><br></td></tr>
+		<tr>
+			<td width="40%" class="tablebody1" align="center"><b>出&nbsp;&nbsp;版&nbsp;&nbsp;社</b>：</td>
+			<td width="60%" class="tablebody1">
+			<input type="text" maxLength="8" size="32" name="publishHouse" style="font-family: Tahoma,Verdana,宋体; font-size: 12px; line-height: 15px; color: #000000"></td>
+		</tr>
+		<tr><td ><br></td></tr>
+		<tr>
+			<td width="40%" class="tablebody1" align="center"><b>出版时间</b>：</td>
+			<td width="60%" class="tablebody1">
+			<input type="text" maxLength="8" size="32" name="publishDate" style="font-family: Tahoma,Verdana,宋体; font-size: 12px; line-height: 15px; color: #000000"></td>
+		</tr>
+		<tr><td ><br></td></tr>
+		<tr>
+			<td width="40%" class="tablebody1" align="center"><b>库存数量</b>：</td>
+			<td width="60%" class="tablebody1">
+			<input type="text" maxLength="8" size="32" name="num" style="font-family: Tahoma,Verdana,宋体; font-size: 12px; line-height: 15px; color: #000000"></td>
+		</tr>
+		<tr><td ><br></td></tr>
+		<tr>
+			<td class="tablebody2" valign="middle" colspan="2" align="center">
+			<input type="submit" value="提 交" >&nbsp;&nbsp;&nbsp;<input type="reset" name="reset" value="清 除"></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>
