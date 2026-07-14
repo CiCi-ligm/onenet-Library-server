@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.UserMapper">
+	<resultMap type="user" id="userMap">
+		<result property="name" column="username"/>
+	</resultMap>
+	<insert id="saveUser" parameterType="user">
+		<selectKey resultType="long" keyProperty="id" order="BEFORE">
+		 	select user_seq.nextval from dual	
+		</selectKey>
+		insert into 
+			bm_user(id,username,password,email,telephone,address)
+			values(#{id},#{name},#{password},#{email},#{telephone},#{address})
+	</insert>
+	<select id="findByName" parameterType="String" resultMap="userMap">
+		select * 
+			from
+			bm_user
+			where username=#{name} 
+		
+	</select>
+	<update id="updateUser" parameterType="user">
+		update bm_user
+			set address = #{address},telephone = #{telephone},email = #{email}
+			 where username = #{name}
+	</update>
+	<update id="changePass" parameterType="user">
+		update bm_user
+			set password = #{password} 
+			 where username = #{name}
+	</update>
+	<delete id="deleteUser" parameterType="user">
+		delete from
+			bm_user
+			where username = #{name}
+	</delete>
+	<select id="findUsers" resultMap="userMap">
+		select * 
+			from bm_user
+			where flag!=1
+	</select>
+	<select id="selectUser" parameterType="String" resultMap="userMap">
+		select * 
+			from bm_user
+			where username = #{name}
+	</select>
+</mapper>

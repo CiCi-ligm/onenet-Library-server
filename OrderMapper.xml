@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.OrderMapper">
+	<insert id="saveOrder" parameterType="order">
+		<selectKey order="BEFORE" resultType="long" keyProperty="id">
+			select bmOrder_seq.nextval from dual
+		</selectKey>
+		insert into
+			bm_order(id,orderDate,amount,user_id)
+			values(#{id},#{orderDate},#{amount},#{user.id})
+	</insert>
+	<select id="findAllOrderById" parameterType="long" resultType="order">
+		select id,orderStatus,orderDate,amount 
+			from bm_order
+			where user_id = #{id}
+	</select>
+	<select id="findAllOrder"  resultType="order">
+		select id,orderStatus,orderDate,amount 
+			from bm_order
+			
+	</select>
+	<update id="updateOrderStatus" parameterType="order">
+		update bm_order
+			set orderStatus = #{orderStatus}
+			 where id = #{id}
+	</update>
+	<select id="countOrder" parameterType="long" resultType="order">
+		select  amount
+			from bm_order
+			where id = #{id}
+	</select>
+	<delete id="deleteOrder" parameterType="long">
+		delete 
+			from bm_order
+			where id = #{id}
+	</delete>
+	<update id="updateOrderAmount" parameterType="order">
+		update bm_order
+			set amount = #{amount}
+			 where id = #{id}
+	</update>
+</mapper>
