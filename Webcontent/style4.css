@@ -1,0 +1,154 @@
+/* 圆形卡片外层容器 */
+.ch-item {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%; /* 圆形 */
+	position: relative;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	cursor: default;
+}
+
+/* 3D透视外层包裹层，承载光晕内阴影效果 */
+.ch-info-wrap{
+	position: absolute;
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	/* 开启3D透视景深 */
+	-webkit-perspective: 800px;
+	-moz-perspective: 800px;
+	-o-perspective: 800px;
+	-ms-perspective: 800px;
+	perspective: 800px;
+
+	/* 过渡动画：hover时光晕平滑变化 */
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+
+	top: 20px;
+	left: 20px;
+	background: #f9f9f9 url(../images/bg.jpg);
+	/* 双层阴影：外层白色扩散光晕 + 内部深色内阴影 */
+	box-shadow: 
+		0 0 0 20px rgba(255,255,255,0.2), 
+		inset 0 0 3px rgba(115,114, 23, 0.8);
+}
+
+/* 卡片翻转核心容器，正反面承载 */
+.ch-info{
+	position: absolute;
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	/* 翻转动画过渡 */
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;	
+	/* 保留子元素3D空间，实现正反面翻转 */
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+/* 卡片正面、背面通用样式 */
+.ch-info > div {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background-position: center center;
+	/* 隐藏元素背面，翻转时不会透显另一面 */
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+/* 卡片背面：默认沿Y轴旋转180度隐藏 */
+.ch-info .ch-info-back {
+	-webkit-transform: rotate3d(0,1,0,180deg);
+	-moz-transform: rotate3d(0,1,0,180deg);
+	-o-transform: rotate3d(0,1,0,180deg);
+	-ms-transform: rotate3d(0,1,0,180deg);
+	transform: rotate3d(0,1,0,180deg);
+	background: #71c6c1; /* 背面底色 */
+}
+
+/* 三组不同头像背景图（团队成员卡片） */
+.ch-img-1 { 
+	background-image: url(../images/team-1.jpg);
+}
+.ch-img-2 { 
+	background-image: url(../images/team-3.jpg);
+}
+.ch-img-3 { 
+	background-image: url(../images/team-2.jpg);
+}
+
+/* 背面标题文字 */
+.ch-info h3 {
+	color: #fff;
+	text-transform: uppercase; /* 全部大写 */
+	letter-spacing: 2px; /* 字间距 */
+	font-size: 14px;
+	margin: 0 15px;
+	padding: 40px 0 0 0;
+	height: 90px;
+	font-family: 'Open Sans', Arial, sans-serif;
+	text-shadow: 
+		0 0 1px #fff, 
+		0 1px 2px rgba(0,0,0,0.3); /* 文字阴影增强可读性 */
+}
+
+/* 背面描述文本 */
+.ch-info p {
+	color: #fff;
+	padding: 10px 5px;
+	font-style: italic;
+	margin: 0 30px;
+	font-size: 12px;
+	border-top: 1px solid rgba(255,255,255,0.5); /* 上分割线 */
+}
+
+/* 背面链接按钮 */
+.ch-info p a {
+	display: block;
+	color: rgba(255,255,255,0.7);
+	font-style: normal;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 9px;
+	letter-spacing: 1px;
+	padding-top: 4px;
+	font-family: 'Open Sans', Arial, sans-serif;
+}
+
+/* 链接悬浮高亮 */
+.ch-info p a:hover {
+	color: rgba(255,242,34, 0.8);
+}
+
+/* 鼠标悬浮卡片外层：修改外层光晕阴影 */
+.ch-item:hover .ch-info-wrap {
+	box-shadow: 
+		0 0 0 0 rgba(255,255,255,0.8), 
+		inset 0 0 3px rgba(115,114, 23, 0.8);
+}
+
+/* 鼠标悬浮：卡片沿Y轴翻转-180度，展示背面 */
+.ch-item:hover .ch-info {
+	-webkit-transform: rotate3d(0,1,0,-180deg);
+	-moz-transform: rotate3d(0,1,0,-180deg);
+	-o-transform: rotate3d(0,1,0,-180deg);
+	-ms-transform: rotate3d(0,1,0,-180deg);
+	transform: rotate3d(0,1,0,-180deg);
+}
